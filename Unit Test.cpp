@@ -43,7 +43,7 @@ void testAddAndGetOperators(void){
     TEST_CHECK(arr[3]==9);
 }
 /**
- * @brief testRemove - tests if removing elements works as expected
+ * @brief testRemove - tests removing elements from the array
  */
 void testRemove(void){
     Array arr;
@@ -55,7 +55,7 @@ void testRemove(void){
     TEST_CHECK(arr.removeElement(11)==false);
     TEST_CHECK(arr.removeIndex(11)==false);
 
-    //Test removeing first element
+    //Test removing first element
     TEST_CHECK(arr.getSize()==4);
     TEST_CHECK(arr.removeIndex(0)==true);
     TEST_CHECK(arr.getSize()==3);
@@ -68,11 +68,11 @@ void testRemove(void){
 }
 
 /**
- * @brief testOutOfBond - tests if the array is initialized and working with add and get
+ * @brief testOutOfBound - tests if the array is initialized and working with add and get
  */
-void testOutOfBond(void){
+void testOutOfBound(void){
     Array arr;
-    // Test on an empty array size since no element it should throw out of range
+    // Test on an empty array. Should throw out_of_range since there are no elements
     TEST_EXCEPTION(arr.get(0), std::out_of_range);
     arr.add(1);
     TEST_EXCEPTION(arr.get(1), std::out_of_range);
@@ -102,11 +102,11 @@ void testSort1(void){
  */
 void testSort2(void){
     Array arr;
-    // Add 1000 elements in the decending order to the array 999 to 0
+    // Add 1000 elements in the descending order to the array 999 to 0
     for (int i = 999; i >= 0; i--){
         arr.add(i);
     }
-    // Test if the are not sorted (expected)
+    // Test if they are not sorted (expected)
     for(int i = 0; i < 1000;i++){
         TEST_CHECK(i != arr[i]);
     }
@@ -118,13 +118,15 @@ void testSort2(void){
     }
 }
 
-
+/**
+ * @brief TEST_LIST - list of unit test to run using acutest
+ */
 
 TEST_LIST = {
    { "Initialization", testInitialization },
    { "Insert and Get", testAddAndGet },
    { "Insert and Get Operators", testAddAndGetOperators },
-   { "Index out of bond", testOutOfBond },
+   { "Index out of Bound", testOutOfBound },
    { "Test Remove", testRemove },
    { "Test sort 1", testSort1 },
    { "Test sort 2", testSort2 },

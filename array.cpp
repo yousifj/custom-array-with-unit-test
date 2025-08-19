@@ -31,7 +31,7 @@ int& Array::operator[](int index){
 int& Array::get(int index){
     // check if index is in range
     if(index < 0 || index > size - 1){
-        std::cerr<<"Index out of bond. Size:" << size << " Index: "<< index;
+        std::cerr<<"Index out of Bound. Size:" << size << " Index: "<< index;
         throw std::out_of_range("Array index out of bounds");
     }else{
         return this->data[index]; 

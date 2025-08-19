@@ -54,7 +54,7 @@ public:
     int& operator [](int);
     /**
      * @brief get - retreve element by index
-     * Check if index is inbond otherwise thows out of range exeption.
+     * Check if index is inbound otherwise thows out of range exeption.
      * 
      * 
      * @param index: index of element to return
@@ -118,7 +118,7 @@ private:
      */
     void increaseCapacity();
     /**
-     * @brief quickSort- algorthim  to sort an array
+     * @brief quickSort- algorthim to sort an array
      * 
      * This is a recursive algorithm that sorts the array by selecting a pivot element
      * and then moving all elements smaller than the pivot to the left, and all elements
